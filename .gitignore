@@ -1,0 +1,9 @@
+*.avi
+*.autosave
+*.bak
+*.mexmaci64
+*.mexa64
+*.mexw32
+*.mexw64
+slprj/
+**/slprj/
