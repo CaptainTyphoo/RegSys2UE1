@@ -1,8 +1,8 @@
-%% Übung Regelungssysteme  
+%% ?bung Regelungssysteme  
 % Parameterdatei zur Simulation des RRP-Roboters
 %
 % Ersteller:    MK, 09.11.2009
-% Änderungen:   BM, AB, 2011
+% ?nderungen:   BM, AB, 2011
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
@@ -25,7 +25,7 @@ parReg.traj_s0         = 0.5;
 parSys.m1   = 20;
 parSys.m2   = 20;
 parSys.m3   = 20;
-parSys.mL   = 20;
+parSys.mL   = 50;
 parSys.l1   = 1;
 parSys.l2   = 1;
 parSys.l3   = 1;
@@ -54,15 +54,23 @@ parReg.parSys = parSys;
 parReg.parSys.mL = 20; % nominelle Lastmasse
 
 % PD-Regler:
-parReg.PD.Ts  = 0.005;
+parReg.PD.Ts = 0.005;
+parReg.PD.KP = diag([17188,17188,20000]);
+parReg.PD.KD = diag([5000,5000,5000]);
 
 % Computed-Torque-Regler:
 % Pole Fehlersystem bei (s+10)^2 = s^2 + 20s + 100
 parReg.CT.Ts  = 0.005;
+parReg.CT.K0 = diag([100,100,100]);
+parReg.CT.K1 = diag([20,20,20]);
 
 % Computed-Torque-Regler mit Adaptionsregelgesetz:
 parReg.CTA.Ts  = 0.001;
-
+parReg.CTA.B = [zeros(3,3);eye(3,3)];
+parReg.CTA.QQ = eye(6);
+parReg.CTA.A=[zeros(3,3) eye(3);-parReg.CT.K0 -parReg.CT.K1];
+parReg.CTA.P = lyap(parReg.CTA.A',parReg.CTA.QQ);
+parReg.CTA.Gamma = 1;
 
 % Sollwertfilter:
 parReg.nennerpolynom = conv(conv([1/100 1],[1/100 1]),[1/100 1]);

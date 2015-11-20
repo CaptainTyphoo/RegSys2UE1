@@ -1,8 +1,8 @@
-%% Übung Regelungssysteme  
+%% ?bung Regelungssysteme  
 % Skript zur grafischen Darstellung der Simulationsergebnisse
 %
 % Ersteller:    MK, 09.11.2009
-% Änderungen:   BM, 10.10.2011
+% ?nderungen:   BM, 10.10.2011
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 printResults = false;
 saveDir = './';
@@ -12,9 +12,9 @@ if printResults
     
 
 else
-    titlename = 'PD-Stoerung: Kp1=Kp2=..., Kp3=..., Kd1=Kd2=..., Kd3=...';     % Überschrift des Plots
+    titlename = 'PD-Stoerung: Kp1=Kp2=..., Kp3=..., Kd1=Kd2=..., Kd3=...';     % ?berschrift des Plots
 end
-
+close all;
 %% Lese Sim-Ergebnisse
 t   = simout_rL.time;
 rL  = simout_rL.signals.values;
@@ -58,19 +58,19 @@ ax(3)=subplot(6,3,[13, 16]);
 plot(t,rL(:,3),LS,t,rLs(:,3),LSs); ylabel('zL_{soll}, zL in m'); xlabel('t in s'); grid on;
 
 ax(4)=subplot(6,3,[2,5]);
-plot(t,q(:,1),LS,t,qs(:,1),LSs); ylabel('phi1_{soll}, phi1 in °'); title(titlename,'fontsize',16); set(gca,'XTickLabel',''); grid on;
+plot(t,q(:,1),LS,t,qs(:,1),LSs); ylabel('phi1_{soll}, phi1 in ?'); title(titlename,'fontsize',16); set(gca,'XTickLabel',''); grid on;
 
 ax(5)=subplot(6,3,[8,11]);
-plot(t,q(:,2),LS,t,qs(:,2),LSs); ylabel('phi2_{soll}, phi2 in °'); set(gca,'XTickLabel',''); grid on;
+plot(t,q(:,2),LS,t,qs(:,2),LSs); ylabel('phi2_{soll}, phi2 in ?'); set(gca,'XTickLabel',''); grid on;
 
 ax(6)=subplot(6,3,[14,17]);
 plot(t,q(:,3),LS,t,qs(:,3),LSs); ylabel('s_{soll}, s in m'); xlabel('t in s'); grid on;
 
 ax(7)=subplot(6,3,[3,6]);
-plot(t,e(:,1),LS); ylabel('phi1-phi1_{soll} in °'); set(gca,'XTickLabel',''); grid on;
+plot(t,e(:,1),LS); ylabel('phi1-phi1_{soll} in ?'); set(gca,'XTickLabel',''); grid on;
 
 ax(8)=subplot(6,3,[9,12]);
-plot(t,e(:,2),LS); ylabel('phi2-phi2_{soll} in °'); set(gca,'XTickLabel',''); grid on;
+plot(t,e(:,2),LS); ylabel('phi2-phi2_{soll} in ?'); set(gca,'XTickLabel',''); grid on;
 
 ax(9)=subplot(6,3,[15,18]);
 plot(t,e(:,3),LS); ylabel('s-s_{soll} in m'); xlabel('t in s'); grid on;
@@ -84,7 +84,7 @@ if printResults
 
     set(gcf,'Units','centimeters','Position',[3.63 2.35 30 20])
 
-    set(gcf,'PaperPositionMode','auto')				% Damit beim anschl. print-Befehl die Figuregröße berücksichtigt wird
+    set(gcf,'PaperPositionMode','auto')				% Damit beim anschl. print-Befehl die Figuregr??e ber?cksichtigt wird
     saveas(gcf, fullfile(saveDir,filename), 'fig')					% 'position', [left, bottom, width, height]
 
     orient landscape                        % portrait = Hochformat, landscape = Querformat
