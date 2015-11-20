@@ -41,9 +41,9 @@ parSys.Izz3 = 1.7;
 parSys.d1   = 1;
 parSys.d2   = 1;
 parSys.d3   = 10;
-parSys.delta_phi10 = 0;    %pi/4;
-parSys.delta_phi20 = 0;    %pi/4;
-parSys.delta_s0    = 0;    %0.25;
+parSys.delta_phi10 = pi/4;    %pi/4;
+parSys.delta_phi20 = pi/4;    %pi/4;
+parSys.delta_s0    = 0.25;    %0.25;
 parSys.phi10 = parReg.traj_phi10 + parSys.delta_phi10;
 parSys.phi20 = parReg.traj_phi20 + parSys.delta_phi20; 
 parSys.s0    = parReg.traj_s0    + parSys.delta_s0; 
@@ -67,10 +67,10 @@ parReg.CT.K1 = diag([20,20,20]);
 % Computed-Torque-Regler mit Adaptionsregelgesetz:
 parReg.CTA.Ts  = 0.001;
 parReg.CTA.B = [zeros(3,3);eye(3,3)];
-parReg.CTA.QQ = eye(6);
+parReg.CTA.QQ = 10.*eye(6);
 parReg.CTA.A=[zeros(3,3) eye(3);-parReg.CT.K0 -parReg.CT.K1];
 parReg.CTA.P = lyap(parReg.CTA.A',parReg.CTA.QQ);
-parReg.CTA.Gamma = 1;
+parReg.CTA.Gamma = 1e-3;
 
 % Sollwertfilter:
 parReg.nennerpolynom = conv(conv([1/100 1],[1/100 1]),[1/100 1]);
