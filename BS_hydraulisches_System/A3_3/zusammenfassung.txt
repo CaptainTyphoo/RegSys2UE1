@@ -1,0 +1,22 @@
+﻿Alle Tests habe ich durchgeführt mit:
+- linearer Feder
+- Sprung von Fl bei T=3s
+- die anderen Parameter wurden jeweils auf dem Ausgangswert belassen
+
+---------------------- k0 ------------------------
+(Ausgangswert 1e-29)
+
+für größere k0 ist die Regelabweichung der Position geringer, dafür fängt die Schätzung der Leckage zu schwingen an
+für kleinere k0 ist die Regelabweichung der Position größer,die Schätzung der Leckage konvergiert  langsam
+
+---------------------- k1 ------------------------
+(Ausgangswert 1e2, bzw 1e2 * 20 beim ohne Adaption) - ich habe nur den ersten Term verändert
+
+je größer k1, umso weniger schwingt die geschätzte Leckage und umso geringer ist die Regelabweichung
+
+für k1>1e3 wird das System allerdings bald instabil
+
+-------------------- gamma ------------------------
+(Ausgangswert 1e6)
+
+keine großartigen Veränderungen, wenn gamma zwischen 1e1 und 1e20 variert wird
