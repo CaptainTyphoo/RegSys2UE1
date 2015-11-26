@@ -1,4 +1,4 @@
-%% ?bung Regelungssysteme  
+%% Uebung Regelungssysteme  
 % Parameterdatei zur Simulation des RRP-Roboters
 %
 % Ersteller:    MK, 09.11.2009
@@ -14,7 +14,7 @@ clc
 
 % Soll-Trajektorie:
 parReg.traj_fKreis     = 0.05;
-parReg.traj_fz         = 2;
+parReg.traj_fz         = 0.2;
 parReg.traj_phi10      = -pi/2; 
 parReg.traj_phi20      = 0;
 parReg.traj_s0         = 0.5;
@@ -41,9 +41,9 @@ parSys.Izz3 = 1.7;
 parSys.d1   = 1;
 parSys.d2   = 1;
 parSys.d3   = 10;
-parSys.delta_phi10 = pi/4;    %pi/4;
-parSys.delta_phi20 = pi/4;    %pi/4;
-parSys.delta_s0    = 0.25;    %0.25;
+parSys.delta_phi10 = 0;    %pi/4;
+parSys.delta_phi20 = 0;    %pi/4;
+parSys.delta_s0    = 0;    %0.25;
 parSys.phi10 = parReg.traj_phi10 + parSys.delta_phi10;
 parSys.phi20 = parReg.traj_phi20 + parSys.delta_phi20; 
 parSys.s0    = parReg.traj_s0    + parSys.delta_s0; 
@@ -55,7 +55,12 @@ parReg.parSys.mL = 20; % nominelle Lastmasse
 
 % PD-Regler:
 parReg.PD.Ts = 0.005;
+
+% Kp Berechnung: tau= tau_stoerung , qp=0 (weil stationaer) -> aus
+% Regelgesetz für tau (3.2) Kp berechnen ->
 parReg.PD.KP = diag([17188,17188,20000]);
+
+% Trial and Error
 parReg.PD.KD = diag([5000,5000,5000]);
 
 % Computed-Torque-Regler:

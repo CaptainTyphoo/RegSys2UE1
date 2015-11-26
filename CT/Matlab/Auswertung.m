@@ -8,11 +8,11 @@ printResults = false;
 saveDir = './';
 if printResults
     filename  = 'Roboter_PD_stoerung';
-    titlename = 'PD-Stoerung: Kp1=Kp2=..., Kp3=..., Kd1=Kd2=..., Kd3=...';
+    titlename = 'PD-Stoerung: Kp1=Kp2=17188, Kp3=20000, Kd1=Kd2=5000, Kd3=5000';
     
 
 else
-    titlename = 'PD-Stoerung: Kp1=Kp2=..., Kp3=..., Kd1=Kd2=..., Kd3=...';     % ?berschrift des Plots
+    titlename = 'PD-Stoerung: Kp1=Kp2=17188, Kp3=20000, Kd1=Kd2=5000, Kd3=5000';     % ?berschrift des Plots
 end
 close all;
 %% Lese Sim-Ergebnisse
@@ -58,19 +58,19 @@ ax(3)=subplot(6,3,[13, 16]);
 plot(t,rL(:,3),LS,t,rLs(:,3),LSs); ylabel('zL_{soll}, zL in m'); xlabel('t in s'); grid on;
 
 ax(4)=subplot(6,3,[2,5]);
-plot(t,q(:,1),LS,t,qs(:,1),LSs); ylabel('phi1_{soll}, phi1 in ?'); title(titlename,'fontsize',16); set(gca,'XTickLabel',''); grid on;
+plot(t,q(:,1),LS,t,qs(:,1),LSs); ylabel('phi1_{soll}, phi1 in Grad'); title(titlename,'fontsize',16); set(gca,'XTickLabel',''); grid on;
 
 ax(5)=subplot(6,3,[8,11]);
-plot(t,q(:,2),LS,t,qs(:,2),LSs); ylabel('phi2_{soll}, phi2 in ?'); set(gca,'XTickLabel',''); grid on;
+plot(t,q(:,2),LS,t,qs(:,2),LSs); ylabel('phi2_{soll}, phi2 in Grad'); set(gca,'XTickLabel',''); grid on;
 
 ax(6)=subplot(6,3,[14,17]);
 plot(t,q(:,3),LS,t,qs(:,3),LSs); ylabel('s_{soll}, s in m'); xlabel('t in s'); grid on;
 
 ax(7)=subplot(6,3,[3,6]);
-plot(t,e(:,1),LS); ylabel('phi1-phi1_{soll} in ?'); set(gca,'XTickLabel',''); grid on;
+plot(t,e(:,1),LS); ylabel('phi1-phi1_{soll} in Grad'); set(gca,'XTickLabel',''); grid on;
 
 ax(8)=subplot(6,3,[9,12]);
-plot(t,e(:,2),LS); ylabel('phi2-phi2_{soll} in ?'); set(gca,'XTickLabel',''); grid on;
+plot(t,e(:,2),LS); ylabel('phi2-phi2_{soll} in Grad'); set(gca,'XTickLabel',''); grid on;
 
 ax(9)=subplot(6,3,[15,18]);
 plot(t,e(:,3),LS); ylabel('s-s_{soll} in m'); xlabel('t in s'); grid on;
