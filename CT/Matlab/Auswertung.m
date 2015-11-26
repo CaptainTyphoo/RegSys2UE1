@@ -6,14 +6,16 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 printResults = false;
 saveDir = './';
-if printResults
-    filename  = 'Roboter_PD_stoerung';
-    titlename = 'PD-Stoerung: Kp1=Kp2=17188, Kp3=20000, Kd1=Kd2=5000, Kd3=5000';
-    
 
-else
-    titlename = 'PD-Stoerung: Kp1=Kp2=17188, Kp3=20000, Kd1=Kd2=5000, Kd3=5000';     % ?berschrift des Plots
-end
+titlename='';
+% if printResults
+%     filename  = 'Roboter_PD_stoerung';
+%     titlename = 'PD-Stoerung: Kp1=Kp2=17188, Kp3=20000, Kd1=Kd2=5000, Kd3=5000';
+%     
+% 
+% else
+%     titlename = 'PD-Stoerung: Kp1=Kp2=17188, Kp3=20000, Kd1=Kd2=5000, Kd3=5000';     % ?berschrift des Plots
+% end
 close all;
 %% Lese Sim-Ergebnisse
 t   = simout_rL.time;

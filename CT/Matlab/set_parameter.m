@@ -14,7 +14,7 @@ clc
 
 % Soll-Trajektorie:
 parReg.traj_fKreis     = 0.05;
-parReg.traj_fz         = 0.2;
+parReg.traj_fz         = 2;
 parReg.traj_phi10      = -pi/2; 
 parReg.traj_phi20      = 0;
 parReg.traj_s0         = 0.5;
@@ -25,6 +25,7 @@ parReg.traj_s0         = 0.5;
 parSys.m1   = 20;
 parSys.m2   = 20;
 parSys.m3   = 20;
+%Echte Masse, nominell =20;
 parSys.mL   = 50;
 parSys.l1   = 1;
 parSys.l2   = 1;
