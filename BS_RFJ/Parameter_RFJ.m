@@ -24,7 +24,7 @@ par_imp.c = 0.7;                %Nm/rad - par_imp(3);
 %% Regler-Parameter
 Ts = 1e-3;                      %s - Abtastzeit des Reglers
 
-par_reg.k0 =100;
+par_reg.k0 =100;   % gemuetlich -> k0= 10
 par_reg.k1 = 80;
 par_reg.gamma_1 = 1e10;
 
