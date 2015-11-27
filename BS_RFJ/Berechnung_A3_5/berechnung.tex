@@ -1,0 +1,58 @@
+\documentclass[10pt,a3paper,landscape]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[left=1.00cm, right=1.00cm, top=1.00cm, bottom=2.00cm]{geometry}
+\begin{document}
+\newcommand{\mybr}[1]{\left(#1\right)}
+\renewcommand{\vec}[1]{\mathbf{#1}}
+\renewcommand{\d}{\mathrm{d}}
+\newcommand{\ze}{\vec{z}_1}
+\newcommand{\zep}{\dot{\vec{z}}_1}
+\newcommand{\xe}{\vec{x}_1}
+\newcommand{\xep}{\dot{\vec{x}}_1}
+\newcommand{\xzp}{\dot{x}_2}
+\newcommand{\alphae}{\alpha_1\mybr{\xe}}
+\newcommand{\mld}{\hat{M}_L}
+\newcommand{\mls}{\tilde{M}_L}
+\newcommand{\mlsp}{\dot{\tilde{M}}_L}
+\newcommand{\fe}{\vec{f}_1\mybr{\xe}}
+\newcommand{\fed}{\hat{\vec{f}}_1\mybr{\xe}}
+\renewcommand{\ge}{\vec{g}_1\mybr{\xe}}
+\newcommand{\dVedze}{\frac{\partial V_1\mybr{\ze}}{\partial \ze}}
+\newcommand{\dadxe}{\frac{\partial \alphae}{\partial \xe}}
+\newcommand{\fegexz}{\mybr{\fe+\ge x_2}}
+
+	
+\begin{align}
+	V_3&=V_1+\frac{\gamma}{2}z_2^2+\frac{\gamma}{2 k_0}\mls^2\\
+	\dot{V}_3&=\dVedze\zep+\gamma z_2 \dot{z}_2+\frac{\gamma}{k_0}\mls\mlsp\\
+	&=\dVedze\fegexz+\gamma\mybr{x_2-\alphae}\mybr{\xzp-\dadxe\xep}+\frac{\gamma}{k_0}\mls\mlsp\\
+	&=\dVedze\fegexz+\gamma\mybr{x_2-\alphae}\mybr{u-\dadxe\fegexz}+\frac{\gamma}{k_0}\mls\mlsp\\
+	&=\dVedze\mybr{\fe+\ge\alphae-\ge\alphae+\ge x_2}+\gamma\mybr{x_2-\alphae}\mybr{u-\dadxe\fegexz}+\frac{\gamma}{k_0}\mls\mlsp\\
+	&=\dVedze\mybr{\fe+\ge\alphae}+\gamma\mybr{x_2-\alphae}\mybr{u-\dadxe\fegexz+\dVedze\frac{\ge}{\gamma}}+\frac{\gamma}{k_0}\mls\mlsp\\
+	&=\dVedze\mybr{\fe+\fed-\fed+\ge\alphae}+\gamma\mybr{x_2-\alphae}\mybr{u-\dadxe\mybr{\fe+\fed-\fed+\ge x_2}+\dVedze\frac{\ge}{\gamma}}+\frac{\gamma}{k_0}\mls\mlsp\\
+	&=\underbrace{\dVedze\mybr{\fed+\ge\alphae}}_{\leq0}+\gamma\mybr{x_2-\alphae}\underbrace{\mybr{u-\dadxe\mybr{\fed+\ge x_2}+\dVedze\frac{\ge}{\gamma}}}_{=-k_1\mybr{x_2-\alphae}}+\underbrace{\frac{\gamma}{k_0}\mls\mlsp+\dVedze\mybr{\fe-\fed}+\gamma\mybr{x_2-\alphae}\mybr{-\dadxe}\mybr{\fe-\fed}}_{=0}\\
+	\fe-\fed&=\begin{bmatrix}0\\\frac{M_L-\mld}{I_a}\end{bmatrix}\\
+	\dVedze&=\frac{\partial}{\partial\ze}\mybr{\int_{0}^{z_{11}}\mybr{M\mybr{\xi+x_{11R}}-M_L}\d\xi+\frac{I_a}{2}z_{12}^2}\\
+	&=\begin{bmatrix}M\mybr{z_{11}+x_{11R}}-M_L & I_a z_{12}\end{bmatrix}\\
+	\dot{x}_{12,ist}&=\dot{x}_{12,soll}\\
+	\frac{1}{I_a}\mybr{M_L-c_0\mybr{x_{11}-\alphae-d_a x_{12}}}&=\frac{1}{I_a}\mybr{M_L-M\mybr{x_11}-d x_{12}}\\
+	-c_0\mybr{x_{11}-\alphae}-d_a x_{12}&=-M\mybr{x_{11}}-d x_{12}\\
+	\alphae&=x_{11}+\frac{\mybr{d_a-d}x_{12}-M\mybr{x_{11}}}{c_0}\\
+	\dadxe&=\begin{bmatrix}1-\frac{\partial M\mybr{x_{11}}}{\partial x_{11}} \frac{1}{c_0} & \frac{d_a-d}{c_0}\end{bmatrix}\\
+	0&=\frac{\gamma}{k_0}\mls\mlsp+\dVedze\mybr{\fe-\fed}+\gamma\mybr{x_2-\alphae}\mybr{-\dadxe}\mybr{\fe-\fed}\\
+	&=\frac{\gamma}{k_0}\mls\mlsp+\mybr{-\mls}z_{12}+\gamma\mybr{x_2-\alphae}\mybr{-\mybr{-\mls}}\frac{d_a-d}{c_0I_a}\\
+	\mls&=\frac{k_0}{\gamma}\mybr{z_{12}-\gamma\mybr{x_2-\alphae}\frac{d_a-d}{c_0 I_a}}\\
+	&=\frac{k_0}{\gamma}\mybr{z_{12}-\gamma\mybr{x_2-x_{11}-\frac{\mybr{d_a-d}x_{12}-M\mybr{x_{11}}}{c_0}}\frac{d_a-d}{c_0 I_a}}\\
+	-k_1\mybr{x_2-\alphae}&=u-\dadxe\mybr{\fed+\ge x_2}+\dVedze \frac{\ge}{\gamma}\\
+	u&=\dadxe\mybr{\fed+\ge x_2}-\dVedze \frac{\ge}{\gamma}-k_1\mybr{x_2-\alphae}\\
+	&=\begin{bmatrix}1-\frac{\partial M\mybr{x_{11}}}{\partial x_{11}} \frac{1}{c_0} & \frac{d_a-d}{c_0}\end{bmatrix}\begin{bmatrix}x_{12}\\
+	\frac{1}{I_a}\mybr{M_L-c_0\mybr{x_{11}-\alphae-d_a x_{12}}}
+	\end{bmatrix}-\frac{1}{\gamma}\begin{bmatrix}M\mybr{z_{11}+x_{11R}}-M_L & I_a z_{12}\end{bmatrix}\begin{bmatrix}
+	0\\\frac{c_0}{I_a}
+	\end{bmatrix}-k_1\mybr{x_2-x_{11}-\frac{\mybr{d_a-d}x_{12}-M\mybr{x_11}}{c_0}}\\
+	u&=x_{12}-\frac{\partial M\mybr{x_{11}}}{\partial x_{11}}\frac{x_{12}}{c_0}+\frac{d_a-d}{c_0 I_a}\mybr{\mld-c_0 x_{11}-d_a x_{12}+c_0 x_2}-\frac{z_{12} c_0}{\gamma}-k_1\mybr{x_2-x_{11}-\frac{\mybr{d_a-d}x_{12}-M\mybr{x_{11}}}{c_0}}
+\end{align}
+\end{document}
