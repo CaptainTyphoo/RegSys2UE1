@@ -1,5 +1,7 @@
-﻿1) Ja
-2) Startwert bei sk=0,5m und wk=1m/s werden ausgeregelt. Auch mit Störkraft.
+﻿1) mit und ohne Adaption: Ja
+2) Startwert bei sk=0,5m und wk=1m/s werden ausgeregelt. Auch mit Störkraft. 
+ohne Adaption: kein Regelfehler
+mit Adaption: Regelfehler der zuerst aufklingt und als schwach gedämpfte Schwingung wieder abklingt
 3) 
 
 Alle Tests habe ich durchgeführt mit:
@@ -9,13 +11,13 @@ Alle Tests habe ich durchgeführt mit:
 
 ---------------------- k0 ------------------------
 (Ausgangswert 1e-29)
-
+(gilt nur für mit Adaption)
 für größere k0 ist die Regelabweichung der Position geringer, dafür fängt die Schätzung der Leckage zu schwingen an
 für kleinere k0 ist die Regelabweichung der Position größer,die Schätzung der Leckage konvergiert  langsam
 
 ---------------------- k1 ------------------------
 (Ausgangswert 1e2, bzw 1e2 * 20 beim ohne Adaption) - ich habe nur den ersten Term verändert
-
+(gilt für mit und ohne Adaption)
 je größer k1, umso weniger schwingt die geschätzte Leckage und umso geringer ist die Regelabweichung
 
 für k1>1e3 wird das System allerdings bald instabil
