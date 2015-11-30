@@ -1,4 +1,8 @@
-﻿Alle Tests habe ich durchgeführt mit:
+﻿1) Ja
+2) Startwert bei sk=0,5m und wk=1m/s werden ausgeregelt. Auch mit Störkraft.
+3) 
+
+Alle Tests habe ich durchgeführt mit:
 - linearer Feder
 - Sprung von Fl bei T=3s
 - die anderen Parameter wurden jeweils auf dem Ausgangswert belassen
@@ -16,7 +20,12 @@ je größer k1, umso weniger schwingt die geschätzte Leckage und umso geringer 
 
 für k1>1e3 wird das System allerdings bald instabil
 
+4) Messrauschen: Adaptiver Regler mit Rauschen deutlich schlechter da kleck durch Rauschen ständig streut.
+
+5)
 -------------------- gamma ------------------------
 (Ausgangswert 1e6)
 
 keine großartigen Veränderungen, wenn gamma zwischen 1e1 und 1e20 variert wird
+
+
