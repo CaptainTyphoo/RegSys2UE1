@@ -32,8 +32,8 @@
 	&=\dVedze\fegexz+\gamma\mybr{x_2-\alphae}\mybr{u-\dadxe\fegexz}+\frac{\gamma}{k_0}\mls\mlsp\\
 	&=\dVedze\mybr{\fe+\ge\alphae-\ge\alphae+\ge x_2}+\gamma\mybr{x_2-\alphae}\mybr{u-\dadxe\fegexz}+\frac{\gamma}{k_0}\mls\mlsp\\
 	&=\dVedze\mybr{\fe+\ge\alphae}+\gamma\mybr{x_2-\alphae}\mybr{u-\dadxe\fegexz+\dVedze\frac{\ge}{\gamma}}+\frac{\gamma}{k_0}\mls\mlsp\\
-	&=\dVedze\mybr{\fe+\fed-\fed+\ge\alphae}+\gamma\mybr{x_2-\alphae}\mybr{u-\dadxe\mybr{\fe+\fed-\fed+\ge x_2}+\dVedze\frac{\ge}{\gamma}}+\frac{\gamma}{k_0}\mls\mlsp\\
-	&=\underbrace{\dVedze\mybr{\fed+\ge\alphae}}_{\leq0}+\gamma\mybr{x_2-\alphae}\underbrace{\mybr{u-\dadxe\mybr{\fed+\ge x_2}+\dVedze\frac{\ge}{\gamma}}}_{=-k_1\mybr{x_2-\alphae}}+\underbrace{\frac{\gamma}{k_0}\mls\mlsp+\dVedze\mybr{\fe-\fed}+\gamma\mybr{x_2-\alphae}\mybr{-\dadxe}\mybr{\fe-\fed}}_{=0}\\
+	&=\dVedze\mybr{\fe+\ge\alphae}+\gamma\mybr{x_2-\alphae}\mybr{u-\dadxe\mybr{\fe+\fed-\fed+\ge x_2}+\dVedze\frac{\ge}{\gamma}}+\frac{\gamma}{k_0}\mls\mlsp\\
+	&=\underbrace{\dVedze\mybr{\fe+\ge\alphae}}_{\leq0}+\gamma\mybr{x_2-\alphae}\underbrace{\mybr{u-\dadxe\mybr{\fed+\ge x_2}+\dVedze\frac{\ge}{\gamma}}}_{=-k_1\mybr{x_2-\alphae}}+\underbrace{\frac{\gamma}{k_0}\mls\mlsp+\gamma\mybr{x_2-\alphae}\mybr{-\dadxe}\mybr{\fe-\fed}}_{=0}\\
 	\fe-\fed&=\begin{bmatrix}0\\\frac{M_L-\mld}{I_a}\end{bmatrix}\\
 	\dVedze&=\frac{\partial}{\partial\ze}\mybr{\int_{0}^{z_{11}}\mybr{M\mybr{\xi+x_{11R}}-M_L}\d\xi+\frac{I_a}{2}z_{12}^2}\\
 	&=\begin{bmatrix}M\mybr{z_{11}+x_{11R}}-M_L & I_a z_{12}\end{bmatrix}\\
@@ -42,10 +42,10 @@
 	-c_0\mybr{x_{11}-\alphae}-d_a x_{12}&=-M\mybr{x_{11}}-d x_{12}\\
 	\alphae&=x_{11}+\frac{\mybr{d_a-d}x_{12}-M\mybr{x_{11}}}{c_0}\\
 	\dadxe&=\begin{bmatrix}1-\frac{\partial M\mybr{x_{11}}}{\partial x_{11}} \frac{1}{c_0} & \frac{d_a-d}{c_0}\end{bmatrix}\\
-	0&=\frac{\gamma}{k_0}\mls\mlsp+\dVedze\mybr{\fe-\fed}+\gamma\mybr{x_2-\alphae}\mybr{-\dadxe}\mybr{\fe-\fed}\\
-	&=\frac{\gamma}{k_0}\mls\mlsp+\mybr{-\mls}z_{12}+\gamma\mybr{x_2-\alphae}\mybr{-\mybr{-\mls}}\frac{d_a-d}{c_0I_a}\\
-	\mlsp&=\frac{k_0}{\gamma}\mybr{z_{12}-\gamma\mybr{x_2-\alphae}\frac{d_a-d}{c_0 I_a}}\\
-	&=\frac{k_0}{\gamma}\mybr{z_{12}-\gamma\mybr{x_2-x_{11}-\frac{\mybr{d_a-d}x_{12}-M\mybr{x_{11}}}{c_0}}\frac{d_a-d}{c_0 I_a}}\\
+	0&=\frac{\gamma}{k_0}\mls\mlsp+\gamma\mybr{x_2-\alphae}\mybr{-\dadxe}\mybr{\fe-\fed}\\
+	&=\frac{\gamma}{k_0}\mls\mlsp+\gamma\mybr{x_2-\alphae}\mybr{-\mybr{-\mls}}\frac{d_a-d}{c_0I_a}\\
+	\mlsp&=\frac{k_0}{\gamma}\mybr{-\gamma\mybr{x_2-\alphae}\frac{d_a-d}{c_0 I_a}}\\
+	&=-k_0\mybr{x_2-x_{11}-\frac{\mybr{d_a-d}x_{12}-M\mybr{x_{11}}}{c_0}}\frac{d_a-d}{c_0 I_a}\\
 	-k_1\mybr{x_2-\alphae}&=u-\dadxe\mybr{\fed+\ge x_2}+\dVedze \frac{\ge}{\gamma}\\
 	u&=\dadxe\mybr{\fed+\ge x_2}-\dVedze \frac{\ge}{\gamma}-k_1\mybr{x_2-\alphae}\\
 	&=\begin{bmatrix}1-\frac{\partial M\mybr{x_{11}}}{\partial x_{11}} \frac{1}{c_0} & \frac{d_a-d}{c_0}\end{bmatrix}\begin{bmatrix}x_{12}\\
